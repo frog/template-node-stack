@@ -1,0 +1,22 @@
+# Editors
+.idea
+.history
+        
+# NodeJS generated
+npm-debug.log
+node_modules
+unit_coverage
+typings
+dist
+.npmrc
+template.npmrc
+
+# Other stuff
+.travis.yml
+
+# Tests
+.nyc_output
+report-dir
+
+# Mac
+.DS_Store

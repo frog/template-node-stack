@@ -1,0 +1,21 @@
+schema {
+  query: Query
+}
+
+type Employee {
+  id: ID!
+  name: String
+}
+
+# type Policy {
+#   policyId: String!
+#   commonData: CommonData
+#   savingsAccountResume: SavingsAccountResume
+#   insuredVehicle: InsuredVehicle
+#   insuredRealPropertyResume: InsuredRealPropertyResume
+#   coverages: [ Coverage ]
+#   movements: [ Movement ]
+#   policyDetail: PolicyDetail
+#   performanceData: PerformanceData
+#   portfolioData: PortfolioData
+# }

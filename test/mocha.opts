@@ -1,0 +1,7 @@
+--exit
+--require babel-register
+--recursive
+--reporter spec
+--slow 0
+test/test.bootstap.js
+src/**/**.specs.js

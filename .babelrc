@@ -1,0 +1,33 @@
+{
+  "env": {
+    "test": {
+      "plugins": [ "istanbul" ]
+    }
+  },
+  "presets": [
+    "@babel/env",
+    "@babel/typescript"
+  ],
+  "plugins": [
+    [ "babel-plugin-inline-import", {
+      "extensions": [
+        ".gql",
+        ".graphql",
+        ".json"
+      ]
+    }],
+    [ "@babel/plugin-transform-runtime", {
+      "regenerator": true
+    }],
+    "transform-object-rest-spread",
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+    ["module-resolver", {
+      "root": ["./src/server"],
+      "extensions": [
+        ".ts",
+        ".js"
+      ]
+    }]
+  ]
+}
