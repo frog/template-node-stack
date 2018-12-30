@@ -1,5 +1,4 @@
 import compose from 'koa-compose';
-
 import logger from './utils/logger';
 
 const access = () => async (ctx, next) => {
