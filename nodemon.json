@@ -8,5 +8,5 @@
     "js": "babel-node --extensions \".js,.ts\""
   },
   "ext": ".js,.ts,.json,.graphql,.gql",
-  "watch": "./"
+  "watch": "./src/server"
 }

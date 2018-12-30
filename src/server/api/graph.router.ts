@@ -19,12 +19,15 @@ const graphql = new Router();
         // Setup the /graphiql route to show the GraphiQL UI
         const enabled = env.NODE_ENV !== Environment.Production
         if (enabled) {
-            graphql.get('/graphiql', graphiqlKoa({
+            graphql.get(
+                '/graphiql',
+                graphiqlKoa({
                     endpointURL: '/graph'
                 })
             )
         }
     }
 })()
+
 
 export default graphql
