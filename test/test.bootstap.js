@@ -14,16 +14,16 @@ nock.disableNetConnect();
 nock.enableNetConnect('127.0.0.1');
 
 after(() => {
-  if (!nock.isDone()) {
-    throw new Error('Not all nock interceptors were used!');
-  }
+	if (!nock.isDone()) {
+		throw new Error('Not all nock interceptors were used!');
+	}
 
-  nock.cleanAll();
-  nock.enableNetConnect();
-  server.close();
+	nock.cleanAll();
+	nock.enableNetConnect();
+	server.close();
 });
 
 module.exports = {
-  chai,
-  requester
+	chai,
+	requester
 };
