@@ -18,19 +18,7 @@ app.use(trace())
 app.use(bodyParser())
 
 logger.info(`Starting server with env ${env.NODE_ENV}`)
-const a = {
-  ignore: [0,
-    1,
-    2,
-    3,
-    -1,
-    -2,
-    -3
-  ],
-  ignoreArrayIndexes: true,
-  enforceConst: true,
-  detectObjects: false
-}
+
 if (env.NODE_ENV !== Environment.production) {
   config.mode = 'development'
   const compiler = Webpack(config)

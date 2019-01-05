@@ -1,7 +1,11 @@
---exit
---require babel-register
+
+--slow 75
+--reporter list
 --recursive
---reporter spec
---slow 0
+--exit
+--require @babel/register
 test/test.bootstap.js
-src/**/**.specs.js
+src/**/**.spec.ts
+src/**/**.spec.js
+test/**/**.spec.ts
+test/**/**.spec.js
