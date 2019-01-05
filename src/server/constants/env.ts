@@ -1,10 +1,10 @@
 import logger from 'utils/logger'
 
 export enum Environment {
-    Dev = 'dev',
-    Local = 'local',
-    Test = 'test',
-    Production = 'production'
+    dev = 'dev',
+    local = 'local',
+    test = 'test',
+    production = 'production'
 }
 
 const getConstValue = (constKey: string, value: string, secret = false): string => {
@@ -19,7 +19,7 @@ const env: {
     NODE_ENV: Environment;
     PORT: number;
 } = {
-    NODE_ENV: Environment[getConstValue('NODE_ENV', 'dev') as keyof typeof Environment] || Environment.Dev,
+    NODE_ENV: Environment[getConstValue('NODE_ENV', 'dev') as keyof typeof Environment] || Environment.dev,
     PORT: parseInt(getConstValue('PORT', '3337'), 10)
 }
 

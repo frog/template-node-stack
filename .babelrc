@@ -9,6 +9,18 @@
     "@babel/typescript"
   ],
   "plugins": [
+    ["module-resolver", {
+      "root": ["./src/server", "./src/public/js"],
+      "alias": {
+        "images/*": "./src/public/images"
+      },
+      "extensions": [
+        ".ts",
+        ".js",
+        ".css",
+        ".png"
+      ]
+    }],
     [ "babel-plugin-inline-import", {
       "extensions": [
         ".gql",
@@ -21,13 +33,6 @@
     }],
     "transform-object-rest-spread",
     "@babel/proposal-class-properties",
-    "@babel/proposal-object-rest-spread",
-    ["module-resolver", {
-      "root": ["./src/server", "./src/public"],
-      "extensions": [
-        ".ts",
-        ".js"
-      ]
-    }]
+    "@babel/proposal-object-rest-spread"
   ]
 }

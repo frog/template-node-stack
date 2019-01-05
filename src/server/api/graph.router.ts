@@ -8,7 +8,7 @@ import env, { Environment } from 'constants/env'
 const graphql = new Router();
 
 (async () => {
-    if (env.NODE_ENV === Environment.Test) {
+    if (env.NODE_ENV === Environment.test) {
         return
     }
     logger.info(`Initializing GraphQL for environment >${env.NODE_ENV}<`)
@@ -17,7 +17,7 @@ const graphql = new Router();
         graphql.post('/graph', middleware)
 
         // Setup the /graphiql route to show the GraphiQL UI
-        const enabled = env.NODE_ENV !== Environment.Production
+        const enabled = env.NODE_ENV !== Environment.production
         if (enabled) {
             graphql.get(
                 '/graphiql',

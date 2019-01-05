@@ -1,7 +1,18 @@
-{
-  "editor.formatOnSave": false,
+{  
+  "telemetry.enableTelemetry": false,
+  "git.enableSmartCommit": true,
+  "window.zoomLevel": 0,
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
+  "tslint.autoFixOnSave": true,
+  "editor.minimap.maxColumn": 160,
+  "html.format.wrapLineLength": 160,
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
   "editor.renderControlCharacters": true,
   "editor.rulers": [80, 120],
-  "javascript.validate.enable": false,
-  "prettier.eslintIntegration": true
+  "javascript.validate.enable": false
 }
