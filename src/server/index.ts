@@ -9,12 +9,11 @@ import app from './server'
  * Make sure the process goes down to allow container resiliency
  */
 const cleanup = () => {
+  logger.info('Cleanup!')
   process.exit(1)
 }
-
 process.on('SIGINT', cleanup)
 process.on('SIGTERM', cleanup)
-
 const options = { spdy: { ssl: false, plain: true } }
 const server = createServer(options, app.callback())
 

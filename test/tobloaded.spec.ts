@@ -1,4 +1,5 @@
-declare const requester, const nock
+declare const requester
+declare const nock
 declare const chai
 
 const a: string = 'franco'

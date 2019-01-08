@@ -1,6 +1,8 @@
 {
   "verbose": false,
-  "ignore": ["node_modules"],
+  "ignore": [
+    "node_modules"
+  ],
   "env": {
     "BABEL_DISABLE_CACHE": 1
   },
@@ -8,5 +10,6 @@
     "js": "babel-node --extensions \".js,.ts\""
   },
   "ext": ".js,.ts,.json,.graphql,.gql",
-  "watch": "./src/server"
+  "watch": "./src/server",
+  "delay": "500"
 }

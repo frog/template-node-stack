@@ -1,0 +1,11 @@
+extend type Query {
+  cardById(id: ID!) : Card
+}
+
+type Card {
+  id: ID!
+  name: String
+  nationalPokedexNumber: Int
+  imageUrl: String
+  imageUrlHiRes: String
+}
