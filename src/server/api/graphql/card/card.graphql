@@ -1,11 +1,65 @@
 extend type Query {
-  cardById(id: ID!) : Card
+  card(id: ID!) : Card
+  cards : [Card]!
 }
 
 type Card {
   id: ID!
+  ability: Ability
   name: String
   nationalPokedexNumber: Int
   imageUrl: String
   imageUrlHiRes: String
+  types: [String]
+  supertype: String
+  subtype: String
+  evolvesFrom: String
+  retreatCost: [EnergyType]
+  convertedRetreatCost: Int
+  number: String
+  artist: String
+  rarity: String
+  series: String
+  set: Set
+  attacks: [Attack]!
+  resistances: [Resistance]!
+  weaknesses: [Weakness]!
+}
+
+type Ability {
+  name: String
+  text: String
+  type: String
+}
+
+enum EnergyType {
+  Fighting
+  Fire
+  Grass
+  Lightning
+  Psychic
+  Water
+  Darkness
+  Metal
+  Fairy
+  Dragon
+  Colorless
+}
+
+type Attack {
+  cost: [EnergyType]
+  name: String
+  text: String
+  damage: String
+  convertedEnergyCost: Int
+}
+
+type Resistance {
+  type: String
+  value: String
+}
+
+type Weakness {
+  type: String
+  value: String
 }

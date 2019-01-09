@@ -2,3 +2,9 @@ extend type Query {
   hello: String
   employee: Employee
 }
+
+
+type Employee {
+  id: ID!
+  name: String
+}

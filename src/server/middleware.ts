@@ -1,4 +1,4 @@
-import Koa from 'koa'
+import Koa, { Middleware } from 'koa'
 import compose from 'koa-compose'
 import logger from './utils/logger'
 
@@ -34,6 +34,13 @@ const onError = () => async (ctx: Koa.Context, next: () => Promise<any>) => {
 }
 
 export const trace = () => compose([access(), onError()])
-export const centralizedErrorHandler = (level: string ) => async (err: {message?: string}) => {
+export const centralizedErrorHandler = (level: string) => async (err: { message?: string }) => {
   logger[level as keyof typeof logger](err.message || 'empty', err)
+}
+
+export const koaWebpack = (): Promise<Middleware> => {
+  const config = require('../../webpack.config.js')
+  config.mode = 'development'
+  const compiler = require('webpack')(config)
+  return require('koa-webpack')({ compiler })
 }
