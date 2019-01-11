@@ -41,18 +41,20 @@ const graphql = new Router();
   if (env.NODE_ENV === Environment.test) {
     return
   }
+
+  const endpoint = '/graph/v1'
   logger.info(`Initializing GraphQL for environment >${env.NODE_ENV}<`)
   const middleware = await koaMiddleware()
   if (middleware !== undefined) {
-    graphql.post('/graph', middleware)
+    graphql.post(endpoint, middleware)
 
     // Setup the /graphiql route to show the GraphiQL UI
     const enabled = env.NODE_ENV !== Environment.production
     if (enabled) {
       graphql.get(
-        '/graphiql',
+        '/graphiql/v1',
         graphiqlKoa({
-          endpointURL: '/graph'
+          endpointURL: endpoint
         })
       )
     }
