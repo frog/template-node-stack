@@ -17,7 +17,8 @@
     "watch2": "nodemon ./src/server/test.js",
     "watch-test": "nodemon ./src/server/index --exec 'npm run test'",
     "coverage": "BABEL_DISABLE_CACHE=1 NODE_ENV=test ./node_modules/.bin/nyc npm test",
-    "clean": "rm -rf dist && rm -rf .nyc_output && rm -rf report-dir"
+    "clean": "rm -rf dist && rm -rf .nyc_output && rm -rf report-dir",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@babel/cli": "7.1.2",
