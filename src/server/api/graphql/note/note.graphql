@@ -1,0 +1,8 @@
+extend type Query {
+  note(id: ID!) : Note
+}
+
+type Note {
+  id: ID!
+  text: String
+}
