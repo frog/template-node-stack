@@ -1,13 +1,15 @@
 import { GraphQLResolveInfo } from 'graphql'
-import fetch from 'node-fetch'
 import logger from 'utils/logger'
+import defineModel from './note.model'
 
 const API_HOST = 'https://api.pokemontcg.io/v1'
 
 export default {
   Query: {
-    note: (obj: any, args: any, context: any, info: GraphQLResolveInfo) => {
+    note: async (obj: any, args: any, context: any, info: GraphQLResolveInfo) => {
       logger.info('resolver::query.note', args)
+      const model = defineModel()
+      const record = (await model).findOne()
       return {
         id: 'fakenote',
         text: 'fakenote text text text'
