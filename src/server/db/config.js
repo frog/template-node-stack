@@ -1,5 +1,9 @@
 const Sequelize = require('sequelize');
+import loggerConstructor from 'pino';
 
+const logger = loggerConstructor({
+	level : 'trace'
+});
 /**
  * Getting a value from application env, or a default - ES6 version
  * @param {string} constKey key to lookup in environment variables

@@ -104,6 +104,7 @@
   "author": "Emanuele Di Saverio <emanuele.disaverio@gmail.com>",
   "license": "Apache-2.0",
   "engines": {
-    "node": "8.11.1"
+    "node": "8.11.1",
+    "npm": "6.5.0"
   }
 }
