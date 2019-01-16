@@ -1,20 +1,17 @@
 import env from 'constants/env'
 import config from 'db/config'
-import { Sequelize } from 'sequelize-typescript'
+import sequelize, { Sequelize } from 'sequelize'
 import logger from 'utils/logger'
 
 let connection: Sequelize
 
-export const initDBConnection = async () => {
-  if (process.env.NODE_ENV === 'test') {
-    return Promise.resolve()
-  }
+export const dbConnection = async (): Promise<Sequelize> => {
 
   if (connection) {
     return Promise.resolve(connection)
   }
 
-  const instance = new Sequelize(config)
+  const instance = new sequelize(config)
 
   try {
     await instance.authenticate()
@@ -25,9 +22,4 @@ export const initDBConnection = async () => {
     logger.error(err)
     return Promise.reject()
   }
-}
-
-export const dbConnection = async () => {
-  await initDBConnection()
-  return connection
 }

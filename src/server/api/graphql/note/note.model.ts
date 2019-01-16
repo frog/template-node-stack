@@ -3,20 +3,12 @@ import sequelize, { Model } from 'sequelize'
 import { dbConnection } from 'utils/db'
 
 const schema = {
-  uuid: {
+  cardId: {
     type: sequelize.STRING,
     allowNull: false,
     primaryKey: true
   },
-  text: sequelize.STRING,
-  createdAt: {
-    type: sequelize.DATE,
-    allowNull: false
-  },
-  updatedAt: {
-    type: sequelize.DATE,
-    allowNull: false
-  }
+  text: sequelize.STRING
 }
 
 const model = async () => (await dbConnection()).define('Notes', schema)

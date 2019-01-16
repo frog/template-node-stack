@@ -1,8 +1,8 @@
 extend type Query {
-  note(id: ID!) : Note
+  noteFor(cardId: ID!) : Note
 }
 
 type Note {
-  id: ID!
+  cardId: String!
   text: String
 }

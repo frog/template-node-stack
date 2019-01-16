@@ -134,7 +134,12 @@
     ],
     "spaced-comment": [
       "error",
-      "always"
+      "always",
+      {
+        "markers": [
+          "/"
+        ]
+      }
     ],
     "object-curly-spacing": [
       "error",

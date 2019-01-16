@@ -1,6 +1,5 @@
-import { OperatorsAliases } from 'sequelize'
-import { SequelizeConfig } from 'sequelize-typescript/lib/types/SequelizeConfig'
+import { Options } from 'sequelize'
 declare module 'db/config' {
-  const content: SequelizeConfig;
+  const content: Options;
   export default content;
 }

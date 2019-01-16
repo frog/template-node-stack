@@ -1,4 +1,3 @@
-// / <reference path="../declarations.d.ts" />
 const Sequelize = require('sequelize');
 
 /**
@@ -60,16 +59,17 @@ const operatorsAliases = {
 	$values        : Op.values,
 	$col           : Op.col
 };
-
+const DEFAULT_PORT = 5432;
 const local = {
 	host       : getConstValue('DB_HOST', 'localhost'),
-	port       : getConstValue('DB_PORT', 5432),
+	port       : getConstValue('DB_PORT', DEFAULT_PORT),
 	dialect    : getConstValue('DATABASE_URL', 'sqlite').split(':')[0],
 	database   : getConstValue('DB_NAME', 'multiplatform-pokedex'),
 	username   : getConstValue('DB_USER', 'root'),
 	password   : getConstValue('DB_PASSWORD', 'pika'),
 	storage    : './database.sqlite',
 	operatorsAliases,
+	/// used only by sequelize-typescript, currently unused
 	modelPaths : [__dirname + '../**/*.model.ts']
 };
 
