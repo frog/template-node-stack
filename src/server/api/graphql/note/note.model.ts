@@ -11,6 +11,6 @@ const schema = {
   text: sequelize.STRING
 }
 
-const model = async () => (await dbConnection()).define('Notes', schema)
+const model = async (): Model => (await dbConnection()).define('Notes', schema)
 
 export default model

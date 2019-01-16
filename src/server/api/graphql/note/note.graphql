@@ -6,3 +6,12 @@ type Note {
   cardId: String!
   text: String
 }
+
+extend type Mutation {
+  upsertNote(note: NoteInput!) : Note
+}
+
+input NoteInput{
+  cardId: String!
+  text: String!
+}

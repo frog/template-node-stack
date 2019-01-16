@@ -2,14 +2,9 @@
 module.exports = {
 	up : (queryInterface, Sequelize) => {
 		return queryInterface.createTable('Notes', {
-			id : {
-				allowNull     : false,
-				autoIncrement : true,
-				primaryKey    : true,
-				type          : Sequelize.INTEGER
-			},
 			cardId : {
-				type : Sequelize.STRING
+				primaryKey : true,
+				type       : Sequelize.STRING
 			},
 			text : {
 				type : Sequelize.STRING

@@ -1,6 +1,14 @@
 extend type Query {
   card(id: ID!) : Card
-  cards : [Card]!
+  cards(start: Cursor) : Cards!
+}
+
+scalar Cursor
+
+type Cards {
+  totalCount: Int!
+  values: [Card]!
+  next: Cursor
 }
 
 type Card {
@@ -24,6 +32,7 @@ type Card {
   attacks: [Attack]!
   resistances: [Resistance]!
   weaknesses: [Weakness]!
+  note: Note
 }
 
 type Ability {

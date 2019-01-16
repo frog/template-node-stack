@@ -1,7 +1,8 @@
 schema {
   query: Query
+  mutation: Mutation
 }
 
 type Query
-# type Mutation
+type Mutation
 # type Susbscription
