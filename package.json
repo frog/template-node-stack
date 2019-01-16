@@ -54,6 +54,7 @@
     "koa-router": "7.4.0",
     "koa-static": "^5.0.0",
     "mariasql": "^0.2.6",
+    "mysql2": "^1.6.4",
     "node-fetch": "2.2.0",
     "pino": "4.17.6",
     "reflect-metadata": "^0.1.12",
