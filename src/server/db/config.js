@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
-import loggerConstructor from 'pino';
 
-const logger = loggerConstructor({
+const logger = require('pino')({
 	level : 'trace'
 });
 /**
