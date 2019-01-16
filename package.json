@@ -8,7 +8,7 @@
     "type-check:watch": "npm run type-check -- --watch",
     "test": "BABEL_DISABLE_CACHE=1 ./node_modules/.bin/mocha | ./node_modules/.bin/pino",
     "build:types": "tsc --emitDeclarationOnly",
-    "build": "npm run build:types && npm run build:js && npm run build:public",
+    "build": "npm run build:js && npm run build:public",
     "build:public": "webpack --mode production",
     "build:js": "BABEL_DISABLE_CACHE=1 babel src --copy-files --source-maps=inline --out-dir dist --extensions \".js,.ts\"",
     "start": "npm run migrate && npm run seed && node ./dist/server/index",

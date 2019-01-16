@@ -77,7 +77,7 @@ const local = {
 };
 
 if (local.dialect === 'mysql2') {
-	local.dialect = 'mariadb';
+	local.dialect = 'mysql';
 }
 
 module.exports = local;
