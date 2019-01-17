@@ -2,6 +2,10 @@
 module.exports = {
 	up : (queryInterface, Sequelize) => {
 		return queryInterface.createTable('Notes', {
+			userId : {
+				primaryKey : true,
+				type       : Sequelize.STRING
+			},
 			cardId : {
 				primaryKey : true,
 				type       : Sequelize.STRING

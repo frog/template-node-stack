@@ -5,7 +5,9 @@ import logger from './utils/logger'
 const access = () => async (ctx: Koa.Context, next: () => Promise<any>) => {
   const { path } = ctx.request
   const logRequest = !path.includes('/ping')
-
+  ctx.user = {
+    little: 'potato'
+  }
   if (logRequest) {
     logger.info(`received request ${ctx.method} "${ctx.url}"`)
   }

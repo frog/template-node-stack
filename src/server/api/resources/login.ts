@@ -4,18 +4,22 @@ import Router from 'koa-router'
 import logger from 'utils/logger'
 
 const users: { [index: string]: {} } = {
-  'ifrog.design.mi@gmail.com|Iw0rk@frog': {
-    name: 'Gianni',
-    surname: 'Boncompagni'
+  'ifrog.design.mi@gmail.com|f0c4cc1n4': {
+    email: 'ifrog.design.mi@gmail.com',
+    name: 'Carlo',
+    surname: 'Verdi'
+  },
+  'franco.nero@gmail.com|f0c4cc1n4': {
+    email: 'franco.nero@gmail.com',
+    name: 'Franco',
+    surname: 'Nero'
   }
-
 }
 
 const login = async (ctx: Router.IRouterContext) => {
-  logger.info('dio')
   const tag = 'rest::login'
   const { username, password } = ctx.request.body
-  logger.info(`${tag} - ${username}:${password}`)
+  logger.info(`${tag} - ${username}:****`)
   const user = users[`${username}|${password}`]
   if (user) {
     ctx.status = 200

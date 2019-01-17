@@ -3,6 +3,11 @@ import sequelize, { Model } from 'sequelize'
 import { dbConnection } from 'utils/db'
 
 const schema = {
+  userId: {
+    type: sequelize.STRING,
+    allowNull: false,
+    primaryKey: true
+  },
   cardId: {
     type: sequelize.STRING,
     allowNull: false,

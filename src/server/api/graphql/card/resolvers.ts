@@ -27,7 +27,10 @@ export default {
         args: {
           cardId: obj.id
         },
-        context, info
+        context: {
+          ...context, parentCard: obj
+        },
+        info
       })
     }
   },

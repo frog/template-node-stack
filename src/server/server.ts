@@ -1,6 +1,7 @@
 import env, { Environment } from 'constants/env'
 import Koa, { Middleware } from 'koa'
 import bodyParser from 'koa-bodyparser'
+import jwt from 'koa-jwt'
 import serve from 'koa-static'
 import logger from 'utils/logger'
 import api from './api/api.router'
@@ -23,6 +24,7 @@ if (env.NODE_ENV !== Environment.production) {
 }
 
 app.use(serve('./dist/public'))
+app.use(jwt({ secret: env.JWT_TOKEN_KEY, passthrough: true }))
 app.use(api.routes())
 app.use(graph.routes())
 

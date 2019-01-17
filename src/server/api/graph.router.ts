@@ -33,8 +33,6 @@ const executableSchema = makeExecutableSchema({
   inheritResolversFromInterfaces: false
 })
 
-const koaMiddleware = async () => graphqlKoa({ schema: executableSchema })
-
 const graphql = new Router();
 
 (async () => {
@@ -44,7 +42,10 @@ const graphql = new Router();
 
   const endpoint = '/graph/v1'
   logger.info(`Initializing GraphQL for environment >${env.NODE_ENV}<`)
-  const middleware = await koaMiddleware()
+  const middleware = await graphqlKoa((ctx) => {
+    return { context: ctx, schema: executableSchema }
+  })
+
   if (middleware !== undefined) {
     graphql.post(endpoint, middleware)
 
